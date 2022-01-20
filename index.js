@@ -6,6 +6,7 @@ nextISSTimesForMyLocation((error, passTimes) => {
   }
   // success, print out the deets!
   for (const flyover of passTimes) {
-    console.log(`Next pass at ${Date(flyover.risetime)} for ${flyover.duration} seconds!`);
+    const date = new Date(flyover.risetime * 1000);
+    console.log(`Next pass at ${date} for ${flyover.duration} seconds!`);
   }
 });
